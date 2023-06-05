@@ -1,0 +1,25 @@
+.lib-control-panel i {
+  font-size: 1.3rem;
+  margin-right: 20px;  
+}
+
+.lib-control-panel i:hover {
+  color: #777;
+  cursor: pointer;
+}
+
+.lib-control-panel input {
+    width: 100%;
+    padding: 5px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #555;
+    border-radius: 5px;
+    background-color: #333;
+    color: #bbb;
+    font-weight: 700;
+}
+
+.lib-control-panel input:focus {
+    outline: none;
+}

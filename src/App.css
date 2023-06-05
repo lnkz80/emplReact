@@ -1,6 +1,14 @@
 body {
   background-color: #282c34;
   font-size: 14px;  
+  color: beige;
+}
+
+.app-brd {
+  margin-bottom: 20px;
+  border: 2px solid #aaa;
+  border-radius: 10px;
+  padding: 20px 40px;
 }
 
 .App {

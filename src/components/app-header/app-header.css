@@ -1,9 +1,6 @@
 .app-header {
-    border: 2px solid #aaa;
-    border-radius: 10px;
+ 
 }
-.app-header h1 {
-    color: beige;
-    padding: 20px;
+.app-header h1 {        
     font-size: 1.8rem;
 }
