@@ -1,12 +1,11 @@
 import './App.css';
-
-const AppHeader = ({ uname }) => <h2 className='appHeader'>Hello, {uname}!</h2>;
+import AppHeader from './components/app-header/app-header'
 
 function App() {
   return (
     <div className='App'>
-      <AppHeader uname='Hike' />
-      <button className='btn btn-primary'>Click</button>
+      <AppHeader />       
+      
     </div>
   );
 }
