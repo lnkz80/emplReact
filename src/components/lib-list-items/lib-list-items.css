@@ -1,17 +1,18 @@
 .lib-list-items table {  
-  width: 100%;
+  width: 100%;  
 }
 
 .lib-list-items thead td {  
     color: beige;
     font-weight: 700;
+    background-color: #282c34;
 }
 
 .lib-list-items td {
     text-align: center;
 }
 
-.lib-list-items th+th, td+td  {
+.lib-list-items td+td  {
     border-left: 3px solid #282c34;    
 }
 
@@ -20,7 +21,7 @@
     color: #b1b1b1;
 }
 
-.lib-list-items tr:nth-child(even) {
+.lib-list-items tr:nth-child(odd) {
     background-color: #25272c;
 }
 

@@ -3,19 +3,19 @@ const libItemsDB  = [
       name: 'Phone',
       type: 'Smartphone',
       location: 'Office 1',
-      user: 'A. Ivanov'
+      user: 'A. Petrenko'
     },
     {
       name: 'Computer',
       type: 'Laptop',
       location: 'Office 2',
-      user: 'V. Petrov'
+      user: 'V. Shevchenko'
     },
     {
       name: 'Printer',
       type: 'Laser',
       location: 'Office 1',
-      user: 'A. Ivanov'
+      user: 'A. Petrenko'
     },
     {
       name: 'Tablet',
@@ -39,7 +39,7 @@ const libItemsDB  = [
       name: 'Monitor',
       type: 'LED',
       location: 'Office 1',
-      user: 'A. Ivanov'
+      user: 'A. Petrenko'
     },
     {
       name: 'Printer',
@@ -57,7 +57,7 @@ const libItemsDB  = [
       name: 'Phone',
       type: 'Feature Phone',
       location: 'Office 1',
-      user: 'A. Ivanov'
+      user: 'A. Petrenko'
     },
     {
       name: 'Printer',

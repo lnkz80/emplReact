@@ -3,7 +3,25 @@ import libItemsDB from '../../data/lib-items';
 import LibItem from '../lib-item/lib-item';
 import './lib-list-items.css';
 
-function LibListItems() {
+const LibListItems = () => {
+
+    const tableRows =  libItemsDB.map((item, idx) => {
+        //=====> LONG VERSION
+        // return <LibItem item={
+        //     {
+        //         i: ++idx, 
+        //         name: item.name, 
+        //         type: item.type, 
+        //         location: item.location, 
+        //         user: item.user
+        //     }
+        //         }/>
+
+        //=====> SHORT VERSION
+        return <LibItem i={++idx} item={{...item}} />
+        }
+    );
+
     return(
         <div className="lib-list-items app-brd">
             <table>
@@ -14,13 +32,11 @@ function LibListItems() {
                         <td>type</td>
                         <td>location</td>
                         <td>user</td>
-                        <td></td>
+                        <td>&nbsp;</td>
                     </tr>
                 </thead>
                 <tbody>
-                {
-                    libItemsDB.map((libItem, idx) => <LibItem item={{i: ++idx, name: libItem.name, type: libItem.type, location: libItem.location, user: libItem.user}} />)
-                }
+                    {tableRows}
                 </tbody>         
             </table>
         </div>

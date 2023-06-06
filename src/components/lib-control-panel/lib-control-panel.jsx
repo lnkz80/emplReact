@@ -1,6 +1,6 @@
 import './lib-control-panel.css'
 
-function LibControlPanel(){
+const LibControlPanel = () => {
     return (
         <div className="lib-control-panel app-brd">            
             <i className="fa-sharp fa-solid fa-circle-plus"></i>

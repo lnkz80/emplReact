@@ -1,14 +1,19 @@
 
 
-function LibItem({item}){
+const LibItem = ({i, item}) => {
+    const {name, type, location, user} = item;
     return(
         <tr>
-            <td>{item.i}</td>
-            <td>{item.name}</td>
-            <td>{item.type}</td>
-            <td>{item.location}</td>
-            <td>{item.user}</td>
-            <td><a href="\"><i className="fa-regular fa-pen-to-square"></i></a><a href="\"><i className="fa-regular fa-trash-can"></i></a></td>
+            <td>{i}</td>
+            <td>{name}</td>
+            <td>{type}</td>
+            <td>{location}</td>
+            <td>{user}</td>
+            <td>
+                {/* //! NEED 2 ADD CLASSES WITH HOVER COLORS ON THIS BUTTONS (btnEdit, btnTrash)  */}
+                <a href="\"><i className="fa-regular fa-pen-to-square"></i></a>
+                <a href="\"><i className="fa-regular fa-trash-can"></i></a>
+            </td>
         </tr>
     );
 }
