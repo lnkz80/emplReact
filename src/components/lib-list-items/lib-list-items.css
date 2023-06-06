@@ -1,0 +1,40 @@
+.lib-list-items table {  
+  width: 100%;
+}
+
+.lib-list-items thead td {  
+    color: beige;
+    font-weight: 700;
+}
+
+.lib-list-items td {
+    text-align: center;
+}
+
+.lib-list-items th+th, td+td  {
+    border-left: 3px solid #282c34;    
+}
+
+.lib-list-items td {    
+    padding: 7px;
+    color: #b1b1b1;
+}
+
+.lib-list-items tr:nth-child(even) {
+    background-color: #25272c;
+}
+
+.lib-list-items td:last-child{    
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.lib-list-items td > a {
+    color: #b1b1b1;
+    /* padding: 0 7px; */
+}
+
+.lib-list-items td > a:hover {
+    color: #ebebeb;
+}
