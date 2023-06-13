@@ -18,7 +18,8 @@ const LibListItems = () => {
         //         }/>
 
         //=====> SHORT VERSION
-        return <LibItem i={++idx} item={{...item}} />
+        const {id, ...itemProps} = item;
+        return <LibItem key={id}  i={++idx} item={{...itemProps}} />
         }
     );
 

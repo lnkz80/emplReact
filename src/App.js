@@ -6,7 +6,7 @@ import LibListItems from './components/lib-list-items/lib-list-items';
 const App = () => {
   return (
     <div className='App'>
-      <AppHeader />       
+      <AppHeader title="Devices library" icon="fa-solid fa-book" />       
       <LibControlPanel />
       <LibListItems />
     </div>
