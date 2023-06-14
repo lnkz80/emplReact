@@ -1,0 +1,23 @@
+.lib-item td {
+    padding: 7px;
+    color: #b1b1b1;
+     text-align: center;
+}
+
+.lib-item td:last-child{    
+    display: flex;
+    justify-content: space-between;    
+}
+
+.lib-item__edit, .lib-item__delete {
+    color: #b1b1b1;
+    transition: color .25s ease-in-out;
+}
+
+.lib-item__edit:hover {
+    color: #dacc0e;
+}
+
+.lib-item__delete:hover {
+    color: #ef2f0e;
+}
