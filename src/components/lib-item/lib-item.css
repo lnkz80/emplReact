@@ -1,7 +1,30 @@
+.lib-item {
+    color: #b1b1b1;
+}
+
+.lib-item:hover {
+    cursor: pointer;
+    color: burlywood;
+}
+
+tr:nth-of-type(odd) {
+    background-color: #25272c;
+}
+
+.selected {
+    background-color: burlywood !important;
+    color: #25272c;
+}
+
+.selected:hover {
+    cursor: pointer;
+    color: #25272c;
+}
+
+
 .lib-item td {
     padding: 7px;
-    color: #b1b1b1;
-     text-align: center;
+    text-align: center;
 }
 
 .lib-item td:last-child{    

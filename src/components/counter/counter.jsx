@@ -24,9 +24,9 @@ class Counter extends Component {
       )
     );
   
-     reset = () => this.setState(state => ({count: this.props.start})) ;
+    reset = () => this.setState(state => ({count: this.props.start})) ;
   
-     round = () => this.setState(state => (
+    round = () => this.setState(state => (
           {
             count: Math.round(Math.random() * (this.maxPoint - this.minPoint) + this.minPoint)
           }

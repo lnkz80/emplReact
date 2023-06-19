@@ -5,7 +5,7 @@ import './lib-list-items.css';
 
 const LibListItems = () => {
 
-    const tableRows =  libItemsDB.map((item, idx) => {
+    const tableRows = libItemsDB.map((item, idx) => {
         //=====> LONG VERSION
         // return <LibItem item={
         //     {
@@ -19,7 +19,7 @@ const LibListItems = () => {
 
         //=====> SHORT VERSION
         const {id, ...itemProps} = item;
-        return <LibItem key={id}  i={++idx} item={{...itemProps}} />
+        return <LibItem key={id} i={++idx} item={{...itemProps}} />
         }
     );
 

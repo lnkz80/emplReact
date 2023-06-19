@@ -16,7 +16,3 @@
     text-align: center;
     padding-bottom: 7px;
 }
-
-.lib-list-items tr:nth-child(odd) {
-    background-color: #25272c;
-}
