@@ -23,7 +23,7 @@ class LibItem extends Component {
         const {selected} = this.state;
         let classNames = "lib-item";
         if (selected) {
-            classNames += " selected";
+            classNames += " lib-item_selected";
         }
         return(
             <tr className={classNames} onClick = {this.onSelected}>

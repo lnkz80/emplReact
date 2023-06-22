@@ -11,12 +11,12 @@ tr:nth-of-type(odd) {
     background-color: #25272c;
 }
 
-.selected {
-    background-color: burlywood !important;
+.lib-item_selected {
+    background-color: #b1b1b1 !important;
     color: #25272c;
 }
 
-.selected:hover {
+.lib-item_selected:hover {
     cursor: pointer;
     color: #25272c;
 }
