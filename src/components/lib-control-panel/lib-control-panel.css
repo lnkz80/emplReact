@@ -30,3 +30,12 @@
 .lib-control-panel input:focus {
     outline: none;
 }
+
+.new-item{
+  display: none;
+  transition: display 2s;
+}
+
+.new-item .animate{
+  display: block;
+}

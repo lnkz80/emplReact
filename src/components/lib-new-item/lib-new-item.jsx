@@ -2,9 +2,9 @@ import "./lib-new-item.css"
 
 const LibNewItem = () => {
     return (
-        <div>
+        <span className="lib-new-item">
             NewItem
-        </div>
+        </span>
     )
 };
 
