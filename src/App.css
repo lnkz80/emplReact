@@ -1,7 +1,7 @@
 body {
   background-color: #282c34;
-  font-size: 14px;  
-  color: beige;
+  font-size: 14px;
+  color: beige;  
 }
 
 .app-brd {
@@ -12,6 +12,6 @@ body {
 }
 
 .App {
- max-width: 700px;
- margin: 50px auto; 
+  max-width: 700px;
+  margin: 50px auto;
 }

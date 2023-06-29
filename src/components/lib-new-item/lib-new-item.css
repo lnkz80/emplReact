@@ -1,3 +1,33 @@
-.lib-new-item_active {
-    transition: top 1s ease 0s;
+.lib-new-item {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;    
+    margin-top: 15px;
+    width: 100%;
 }
+
+.lib-new-item h5 {    
+    width: 100%;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 2px solid #aaaaaa;
+}
+
+.lib-new-item button {      
+    align-self: center;
+    padding: 7px 60px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #555;
+    border-radius: 5px;
+    background-color: #aaaaaa;
+    color: #555;
+    font-weight: 700; 
+    font-size: 1.2em;
+    transition: .25s ease-in-out;     
+  }
+
+  .lib-new-item button:hover {
+    background-color: #777;
+    color: #aaaaaa;    
+  }

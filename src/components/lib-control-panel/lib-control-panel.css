@@ -1,6 +1,6 @@
 .lib-control-panel__afs-line {
   display: flex;
-  justify-content: center;
+  justify-content: center;  
 }
 
 .lib-control-panel i { 
@@ -15,7 +15,7 @@
   cursor: pointer;
 }
 
-.lib-control-panel input {    
+.lib-control-panel input, select {    
     width: 100%;
     padding: 5px 20px;
     margin: 8px 0;
@@ -32,10 +32,10 @@
 }
 
 .new-item{
-  display: none;
-  transition: display 2s;
+  
+  transition: opacity 3s ease-in-out;
 }
 
 .new-item .animate{
-  display: block;
+  opacity: 0;
 }

@@ -7,14 +7,14 @@ class LibControlPanel extends Component {
     super();
     this.state = {
       showPanel: false,
-      newItemClass: '',
-    };
+      newItemClass: 'new-item',      
+    };    
   }
 //! ANIMATE APPEARING OF BLOCK!!!!!
   toggleNewItem = () =>
     this.setState((state) => ({
       showPanel: !state.showPanel,
-      newItemClass: state.newItemClass ? 'new-item' : 'new-item animate',
+      newItemClass: state.newItemClass !== 'new-item' ? 'new-item' : 'new-item animate',      
     }));
 
   render() {
