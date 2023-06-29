@@ -4,10 +4,12 @@ import './index.css';
 import App from './App';
 // import reportWebVitals from './reportWebVitals';
 
+import libItemsDB from './data/lib-items';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />    
+    <App data = {libItemsDB} />    
     
   </React.StrictMode>
 );

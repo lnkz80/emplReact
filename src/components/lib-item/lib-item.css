@@ -29,7 +29,8 @@ tr:nth-of-type(odd) {
 
 .lib-item td:last-child{    
     display: flex;
-    justify-content: space-between;    
+    justify-content: space-between;
+    align-items: center;    
 }
 
 .lib-item__edit, .lib-item__delete {
