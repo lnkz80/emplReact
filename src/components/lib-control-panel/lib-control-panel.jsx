@@ -3,8 +3,8 @@ import LibNewItem from '../lib-new-item/lib-new-item';
 import './lib-control-panel.css';
 
 class LibControlPanel extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       showPanel: false,
       newItemClass: 'new-item',      
@@ -18,6 +18,7 @@ class LibControlPanel extends Component {
     }));
 
   render() {
+    const {onAddNewItem} = this.props;
     return (
       <div className='lib-control-panel app-brd'>
         <div className='lib-control-panel__afs-line'>
@@ -25,7 +26,7 @@ class LibControlPanel extends Component {
           <i className='fa-solid fa-filter'></i>
           <input type='text' placeholder='Пошук...' />
         </div>
-        <div className={this.state.newItemClass}>{this.state.showPanel && <LibNewItem />}</div>
+        <div className={this.state.newItemClass}>{this.state.showPanel && <LibNewItem onAddNewItem = {onAddNewItem} />}</div>
       </div>
     );
   }

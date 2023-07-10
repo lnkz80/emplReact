@@ -16,9 +16,13 @@ class LibItem extends Component {
             selected: !selected
         }));
     };
+
+    onTest = e => {
+        console.log(e.target);
+    }
     
     render() {
-        const {i, item, onDelete} = this.props;
+        const {i, item, onDelete} = this.props;        
         const {name, type, location, user} = item;
         const {selected} = this.state;
         let classNames = "lib-item";
@@ -34,7 +38,7 @@ class LibItem extends Component {
                 <td>{location}</td>
                 <td>{user}</td>
                 <td>                
-                    <i className="fa-regular fa-pen-to-square lib-item__edit"></i>
+                    <i className="fa-regular fa-pen-to-square lib-item__edit" onClick={this.onTest}></i>
                     <i onClick={onDelete} className="fa-regular fa-trash-can lib-item__delete"></i>
                 </td>
             </tr>

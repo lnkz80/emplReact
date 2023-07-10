@@ -16,8 +16,13 @@ class App extends Component {
     };
   }
 
+  addNewItem = (event, name, type, location, user) => {
+    event.preventDefault();
+    // console.log( name, type, location, user);
+  }
+
   deleteItem = id => {    
-    this.setState(({data}) =>{
+    this.setState(({data}) =>{      
       return {
           data: data.filter(elem => elem.id !== id ),
           }
@@ -29,7 +34,7 @@ class App extends Component {
     return (
       <div className='App'>
         <AppHeader title='Devices library' icon='fa-solid fa-book' />
-        <LibControlPanel />
+        <LibControlPanel onAddNewItem = {this.addNewItem} />
         <LibListItems data = {this.state.data} onDelete = {this.deleteItem} />
         {/* <Counter start={0} /> */}
       </div>

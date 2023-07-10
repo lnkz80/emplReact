@@ -2,8 +2,8 @@ import { Component } from "react";
 import "./lib-new-item.css"
 
 class LibNewItem extends Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
 
         this.state = {
             itemName: '',
@@ -18,14 +18,10 @@ class LibNewItem extends Component {
         this.setState(()=>({
             [target.name]: target.value,
         }));
-    }
-
-    addNewItem = (e) => {
-        e.preventDefault();
-        console.log(this.state);
-    }
+    }   
 
     render(){
+        const {onAddNewItem} = this.props;
         return (
             <form action="" method="" className="lib-new-item">
                 <h5>Add new item</h5>
@@ -38,7 +34,7 @@ class LibNewItem extends Component {
                     <option value="ConfRoom">Conference Room</option>
                 </select>
                 <input  onChange={this.onChangeItemValue} type="text" placeholder="User" name="itemUser" />
-                <button onClick={this.addNewItem}>Send</button>
+                <button onClick={(e)=>onAddNewItem(e, this.state.itemName, this.state.itemType, this.state.itemLocation, this.state.itemUser)}>Send</button>
             </form>
         )
     }
