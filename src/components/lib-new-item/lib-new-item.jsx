@@ -20,6 +20,11 @@ class LibNewItem extends Component {
         }));
     }
 
+    addNewItem = (e) => {
+        e.preventDefault();
+        console.log(this.state);
+    }
+
     render(){
         return (
             <form action="" method="" className="lib-new-item">
@@ -33,7 +38,7 @@ class LibNewItem extends Component {
                     <option value="ConfRoom">Conference Room</option>
                 </select>
                 <input  onChange={this.onChangeItemValue} type="text" placeholder="User" name="itemUser" />
-                <button>Send</button>
+                <button onClick={this.addNewItem}>Send</button>
             </form>
         )
     }
