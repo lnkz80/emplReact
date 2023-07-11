@@ -14,13 +14,28 @@ class App extends Component {
     this.state = {
       data: this.props.data,
     };
+    this.maxId = this.state.data.length;
   }
 
-  addNewItem = (event, name, type, location, user) => {
-    event.preventDefault();
-    // console.log( name, type, location, user);
-  }
+  addNewItem = ({name, type, location, user}) => {      
+    
+    const newItem = {
+      id: ++this.maxId,
+      name,
+      type,
+      location,
+      user,
+    };
+    
+    this.setState(({data})=>{
+      const newArr = [...data, newItem];
+      return{
+        data: newArr
+      };
+    });
 
+  }
+  
   deleteItem = id => {    
     this.setState(({data}) =>{      
       return {
@@ -28,10 +43,11 @@ class App extends Component {
           }
         })
     
-  };
-
-  render() {
-    return (
+      };
+      
+  render() {    
+    // console.log(this.state.data);
+    return (          
       <div className='App'>
         <AppHeader title='Devices library' icon='fa-solid fa-book' />
         <LibControlPanel onAddNewItem = {this.addNewItem} />
