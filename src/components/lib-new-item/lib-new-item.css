@@ -31,3 +31,17 @@
     background-color: #777;
     color: #aaaaaa;    
   }
+
+  .lib-new-item button.approve {
+    background-color: #259e16;
+    color: beige;
+  }
+  
+  .lib-new-item button.reject {
+    background-color: #ef2f0e;
+    color: beige;    
+  }
+
+  .field_rejected {
+    border: 2px solid #ef2f0e;
+  }

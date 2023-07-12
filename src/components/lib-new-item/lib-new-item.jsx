@@ -14,21 +14,49 @@ class LibNewItem extends Component {
     }
 
     onChangeItemValue = (e) => {
+        //!REMOVE CLASS REJECTED
+
         const target = e.target;
         this.setState(()=>({
             [target.name]: target.value,
         }));
-    }   
+    }
+
+    validateFields = (field) => {
+        if (!field || field.length < 3) {            
+            return false;
+        } else {            
+            return true;
+        }
+    }
     
     onSubmit = (e) => {
-        e.preventDefault();        
-        this.props.onAddNewItem(this.state);
-        this.setState({
-            name: '',
-            type: '',
-            location: '',
-            user: ''
-        });
+        let isValid = true,
+            inValidFields = [];
+        
+        e.preventDefault();
+
+        for (let key in this.state) {            
+            if (!this.validateFields(this.state[key])){
+                inValidFields.push(key);
+                isValid = false;
+            }
+        }
+
+        if (!!isValid){
+            this.props.onAddNewItem(this.state);
+            this.setState({
+                name: '',
+                type: '',
+                location: '',
+                user: ''
+            });
+            e.currentTarget.reset();            
+        } else {
+            //! CHANGE STYLE ON CLASS REJECTED BORDER
+            inValidFields.forEach(fieldName=>e.currentTarget.querySelector(`[name=${fieldName}]`).style.border='2px solid #ef2f0e');            
+        }
+
     }
 
     render(){
@@ -45,7 +73,10 @@ class LibNewItem extends Component {
                     <option value="Office3">Office 3</option>
                     <option value="ConfRoom">Conference Room</option>
                 </select>
-                <input  onChange={this.onChangeItemValue} type="text" placeholder="User" name="user" />
+                <input  onChange={this.onChangeItemValue} type="text" placeholder="User" name="user" />                
+                {/*                 
+                //! MAKE BUTTON GREEN WHEN SUBMITTING                
+                */}
                 <button>Send</button>
             </form>
         )
