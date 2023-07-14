@@ -23,27 +23,27 @@ class LibNewItem extends Component {
     }
 
     validateFields = (field) => {
-        if (!field || field.length < 3) {            
+        if (!field || field.length < 3) {
             return false;
-        } else {            
+        } else {
             return true;
         }
     }
-    
+
     onSubmit = (e) => {
         let isValid = true,
             inValidFields = [];
-        
+
         e.preventDefault();
 
-        for (let key in this.state) {            
+        for (let key in this.state) {
             if (!this.validateFields(this.state[key])){
                 inValidFields.push(key);
                 isValid = false;
             }
         }
 
-        if (!!isValid){
+        if (isValid){
             this.props.onAddNewItem(this.state);
             this.setState({
                 name: '',
@@ -51,37 +51,37 @@ class LibNewItem extends Component {
                 location: '',
                 user: ''
             });
-            e.currentTarget.reset();            
+            e.currentTarget.reset();
         } else {
             //! CHANGE STYLE ON CLASS REJECTED BORDER
-            inValidFields.forEach(fieldName=>e.currentTarget.querySelector(`[name=${fieldName}]`).style.border='2px solid #ef2f0e');            
+            inValidFields.forEach(fieldName=>e.currentTarget.querySelector(`[name=${fieldName}]`).style.border='2px solid #ef2f0e');
         }
 
     }
 
     render(){
         // const {onAddNewItem} = this.props;
-        //! DEFAULT OPTION DONT GET INTO DATA
         return (
             <form action="" method="" className="lib-new-item" onSubmit={this.onSubmit} >
                 <h5>Add new item</h5>
                 <input  onChange={this.onChangeItemValue} type="text" placeholder="Item name" name="name" />
-                <input  onChange={this.onChangeItemValue} type="text" placeholder="Type of item" name="type" />            
+                <input  onChange={this.onChangeItemValue} type="text" placeholder="Type of item" name="type" />
                 <select onChange={this.onChangeItemValue} name="location" id="location">
-                    <option value="Office1" defaultValue>Office 1</option>
+                    <option value="" disabled selected>Choose location</option>
+                    <option value="Office1">Office 1</option>
                     <option value="Office2">Office 2</option>
                     <option value="Office3">Office 3</option>
                     <option value="ConfRoom">Conference Room</option>
                 </select>
-                <input  onChange={this.onChangeItemValue} type="text" placeholder="User" name="user" />                
-                {/*                 
-                //! MAKE BUTTON GREEN WHEN SUBMITTING                
+                <input  onChange={this.onChangeItemValue} type="text" placeholder="User" name="user" />
+                {/*
+                //! MAKE BUTTON GREEN WHEN SUBMITTING
                 */}
                 <button>Send</button>
             </form>
         )
     }
-    
+
 };
 
 export default LibNewItem;

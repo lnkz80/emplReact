@@ -13,6 +13,10 @@
     border-bottom: 2px solid #aaaaaa;
 }
 
+.lib-new-item select:invalid {  
+  color: #757575;
+}
+
 .lib-new-item button {      
     align-self: center;
     padding: 7px 60px;
