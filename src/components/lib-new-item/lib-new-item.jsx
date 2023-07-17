@@ -14,9 +14,9 @@ class LibNewItem extends Component {
     }
 
     onChangeItemValue = (e) => {
-        //!REMOVE CLASS REJECTED
-
+        //! ?USE STATE TO REMOVE CLASS REJECTED?
         const target = e.target;
+        target.classList.remove('field_rejected');
         this.setState(()=>({
             [target.name]: target.value,
         }));
@@ -32,9 +32,20 @@ class LibNewItem extends Component {
 
     onSubmit = (e) => {
         let isValid = true,
-            inValidFields = [];
-
+        inValidFields = [];
+        const sbtBtn = e.target.querySelector('button');
         e.preventDefault();
+
+        const btnAnimate = (tglClass, tglWord) => {
+            sbtBtn.classList.add(tglClass);
+            sbtBtn.textContent = tglWord;
+            sbtBtn.disabled = true;
+            setTimeout(() => {
+                sbtBtn.disabled = false;
+                sbtBtn.classList.remove(tglClass);
+                sbtBtn.textContent = "Send";
+            }, 2000);
+        }
 
         for (let key in this.state) {
             if (!this.validateFields(this.state[key])){
@@ -51,12 +62,14 @@ class LibNewItem extends Component {
                 location: '',
                 user: ''
             });
+            btnAnimate('approve', 'Sended!');
             e.currentTarget.reset();
-        } else {
-            //! CHANGE STYLE ON CLASS REJECTED BORDER
-            inValidFields.forEach(fieldName=>e.currentTarget.querySelector(`[name=${fieldName}]`).style.border='2px solid #ef2f0e');
-        }
 
+        } else {
+            //? MAYBE CAN USE STATE WHEN CHANGE COLOR OF BORDER?
+            inValidFields.forEach(fieldName=>e.currentTarget.querySelector(`[name=${fieldName}]`).classList.add('field_rejected'));
+            btnAnimate('reject', 'Error!');
+        }
     }
 
     render(){
@@ -67,21 +80,17 @@ class LibNewItem extends Component {
                 <input  onChange={this.onChangeItemValue} type="text" placeholder="Item name" name="name" />
                 <input  onChange={this.onChangeItemValue} type="text" placeholder="Type of item" name="type" />
                 <select onChange={this.onChangeItemValue} name="location" id="location">
-                    <option value="" disabled selected>Choose location</option>
+                    <option value="" defaultValue>Choose location</option>
                     <option value="Office1">Office 1</option>
                     <option value="Office2">Office 2</option>
                     <option value="Office3">Office 3</option>
                     <option value="ConfRoom">Conference Room</option>
                 </select>
-                <input  onChange={this.onChangeItemValue} type="text" placeholder="User" name="user" />
-                {/*
-                //! MAKE BUTTON GREEN WHEN SUBMITTING
-                */}
+                <input  onChange={this.onChangeItemValue} type="text" placeholder="User" name="user" />                
                 <button>Send</button>
             </form>
         )
     }
-
 };
 
 export default LibNewItem;

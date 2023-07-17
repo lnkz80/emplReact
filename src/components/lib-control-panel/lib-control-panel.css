@@ -3,14 +3,14 @@
   justify-content: center;  
 }
 
-.lib-control-panel i { 
+.lib-control-panel__afs-line i { 
   display: flex;
   align-self: center; 
   font-size: 1.3rem;
   margin-right: 20px;    
 }
 
-.lib-control-panel i:hover {
+.lib-control-panel__afs-line i:hover {
   color: #777;
   cursor: pointer;
 }
@@ -20,12 +20,13 @@
     padding: 5px 20px;
     margin: 8px 0;
     box-sizing: border-box;
+    color: #bbb;    
     border: 2px solid #555;
     border-radius: 5px;
     background-color: #333;
-    color: #bbb;
     font-weight: 700;    
-}
+  }  
+  
 
 .lib-control-panel input:focus {
     outline: none;
