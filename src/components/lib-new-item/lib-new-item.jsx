@@ -31,7 +31,7 @@ class LibNewItem extends Component {
     }
 
     onSubmit = (e) => {
-        let isValid = true,
+        let isValid = false,
         inValidFields = [];
         const sbtBtn = e.target.querySelector('button');
         e.preventDefault();
@@ -64,7 +64,6 @@ class LibNewItem extends Component {
             });
             btnAnimate('approve', 'Sended!');
             e.currentTarget.reset();
-
         } else {
             //? MAYBE CAN USE STATE WHEN CHANGE COLOR OF BORDER?
             inValidFields.forEach(fieldName=>e.currentTarget.querySelector(`[name=${fieldName}]`).classList.add('field_rejected'));
