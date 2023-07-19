@@ -13,12 +13,12 @@ class App extends Component {
     super(props);
     this.state = {
       data: this.props.data,
+      searchText: '',
     };
     this.maxId = this.state.data.length;
   }
 
-  addNewItem = ({name, type, location, user}) => {      
-    
+  addNewItem = ({name, type, location, user}) => {
     const newItem = {
       id: ++this.maxId,
       name,
@@ -26,33 +26,44 @@ class App extends Component {
       location,
       user,
     };
-    
+
     this.setState(({data})=>{
       const newArr = [...data, newItem];
       return{
         data: newArr
       };
     });
-
   }
-  
-  deleteItem = id => {    
-    this.setState(({data}) =>{      
+
+  deleteItem = id => {
+    this.setState(({data}) =>{
       return {
           data: data.filter(elem => elem.id !== id ),
           }
         })
-    
       };
-      
-  render() {    
+
+  onUpdSearch = searchText => this.setState({searchText});
+
+  searchName = (items, text) => {
+    if (text.length === 0){
+      return items;
+    }
+    return items.filter(item => {
+      return item.name.indexOf(text) > -1
+    });
+  }
+
+  render() {
+    const {data, searchText} = this.state;
     // console.log(this.state.data);
-    return (          
+    const visibleItems = this.searchName(data, searchText);
+
+    return (
       <div className='App'>
         <AppHeader title='Devices library' icon='fa-solid fa-book' />
-        <LibControlPanel onAddNewItem = {this.addNewItem} />
-        <LibListItems data = {this.state.data} onDelete = {this.deleteItem} />
-        {/* <Counter start={0} /> */}
+        <LibControlPanel onAddNewItem = {this.addNewItem} onSearch = {this.onUpdSearch} />
+        <LibListItems data = {visibleItems} onDelete = {this.deleteItem} />        
       </div>
     );
   }

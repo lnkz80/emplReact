@@ -1,13 +1,13 @@
 .lib-control-panel__afs-line {
   display: flex;
-  justify-content: center;  
+  justify-content: center;
 }
 
-.lib-control-panel__afs-line i { 
+.lib-control-panel__afs-line i {
   display: flex;
-  align-self: center; 
+  align-self: center;
   font-size: 1.3rem;
-  margin-right: 20px;    
+  margin-right: 20px;
 }
 
 .lib-control-panel__afs-line i:hover {
@@ -15,28 +15,26 @@
   cursor: pointer;
 }
 
-.lib-control-panel input, select {    
+.lib-control-panel input, select {
     width: 100%;
     padding: 5px 20px;
     margin: 8px 0;
     box-sizing: border-box;
-    color: #bbb;    
+    color: #bbb;
     border: 2px solid #555;
     border-radius: 5px;
     background-color: #333;
-    font-weight: 700;    
-  }  
-  
+    font-weight: 700;
+  }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #bbb;
+  -webkit-box-shadow: 0 0 0px 1000px #333 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
 
 .lib-control-panel input:focus {
     outline: none;
-}
-
-.new-item{
-  
-  transition: opacity 3s ease-in-out;
-}
-
-.new-item .animate{
-  opacity: 0;
 }

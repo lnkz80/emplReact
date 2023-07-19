@@ -6,16 +6,22 @@ class LibControlPanel extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showPanel: false,
-      newItemClass: 'new-item',      
+      showPanel: false,       
+      searchText: '',
     };    
   }
 //! ANIMATE APPEARING OF BLOCK!!!!!
   toggleNewItem = () =>
     this.setState((state) => ({
-      showPanel: !state.showPanel,
-      newItemClass: state.newItemClass !== 'new-item' ? 'new-item' : 'new-item animate',      
+      showPanel: !state.showPanel,      
     }));
+
+  onSearch = (e) => {
+    const searchText = e.target.value;
+    this.setState({searchText});
+    this.props.onSearch(searchText);
+  };
+  
 
   render() {
     const {onAddNewItem} = this.props;
@@ -24,9 +30,9 @@ class LibControlPanel extends Component {
         <div className='lib-control-panel__afs-line'>
           <i className='fa-sharp fa-solid fa-circle-plus' onClick={this.toggleNewItem}></i>
           <i className='fa-solid fa-filter'></i>
-          <input type='text' placeholder='Пошук...' />
+          <input type='text' name="search" placeholder='Пошук...' onChange={this.onSearch} />
         </div>
-        <div className={this.state.newItemClass}>{this.state.showPanel && <LibNewItem onAddNewItem = {onAddNewItem} />}</div>
+        {this.state.showPanel && <LibNewItem onAddNewItem = {onAddNewItem} />}        
       </div>
     );
   }

@@ -31,9 +31,8 @@ class LibNewItem extends Component {
     }
 
     onSubmit = (e) => {
-        let isValid = false,
-        inValidFields = [];
-        const sbtBtn = e.target.querySelector('button');
+        const inValidFields = [],
+        sbtBtn = e.target.querySelector('button');
         e.preventDefault();
 
         const btnAnimate = (tglClass, tglWord) => {
@@ -50,11 +49,10 @@ class LibNewItem extends Component {
         for (let key in this.state) {
             if (!this.validateFields(this.state[key])){
                 inValidFields.push(key);
-                isValid = false;
             }
         }
 
-        if (isValid){
+        if (inValidFields.length === 0){
             this.props.onAddNewItem(this.state);
             this.setState({
                 name: '',
@@ -76,16 +74,16 @@ class LibNewItem extends Component {
         return (
             <form action="" method="" className="lib-new-item" onSubmit={this.onSubmit} >
                 <h5>Add new item</h5>
-                <input  onChange={this.onChangeItemValue} type="text" placeholder="Item name" name="name" />
-                <input  onChange={this.onChangeItemValue} type="text" placeholder="Type of item" name="type" />
-                <select onChange={this.onChangeItemValue} name="location" id="location">
+                <input  onInput={this.onChangeItemValue} type="text" placeholder="Item name" name="name" />
+                <input  onInput={this.onChangeItemValue} type="text" placeholder="Type of item" name="type" />
+                <select onInput={this.onChangeItemValue} name="location" id="location">
                     <option value="" defaultValue>Choose location</option>
                     <option value="Office1">Office 1</option>
                     <option value="Office2">Office 2</option>
                     <option value="Office3">Office 3</option>
                     <option value="ConfRoom">Conference Room</option>
                 </select>
-                <input  onChange={this.onChangeItemValue} type="text" placeholder="User" name="user" />                
+                <input  onInput={this.onChangeItemValue} type="text" placeholder="User" name="user" />
                 <button>Send</button>
             </form>
         )
